@@ -1,14 +1,17 @@
 package ru.ulstu.service;
 
 import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Service;
 import ru.ulstu.model.OffsetablePageRequest;
 import ru.ulstu.model.PageableItems;
 import ru.ulstu.model.Request;
 import ru.ulstu.repository.RequestRepository;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class RequestService implements Crud<Request> {
 
     private final RequestRepository requestRepository;
@@ -54,5 +57,9 @@ public class RequestService implements Crud<Request> {
     @Override
     public void delete(Request request) {
         requestRepository.delete(request);
+    }
+
+    public List<Request> findByDateBetween(Date dateFrom, Date dateTo){
+        return requestRepository.findByDateBetween(dateFrom, dateTo);
     }
 }

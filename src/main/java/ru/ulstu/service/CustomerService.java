@@ -1,8 +1,10 @@
 package ru.ulstu.service;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import ru.ulstu.model.Customer;
+import ru.ulstu.model.CustomerStatistic;
 import ru.ulstu.model.OffsetablePageRequest;
 import ru.ulstu.model.PageableItems;
 import ru.ulstu.repository.CustomerRepository;
@@ -56,5 +58,13 @@ public class CustomerService implements Crud<Customer> {
     @Override
     public void delete(Customer customer) {
         customerRepository.delete(customer);
+    }
+
+    public List<Customer> findByAddress(String address){
+        return customerRepository.findByAddress(address);
+    }
+
+    List<CustomerStatistic> getCustomerStatisticStartName(String firstLetter){
+        return customerRepository.getCustomerStatisticStartName(firstLetter);
     }
 }

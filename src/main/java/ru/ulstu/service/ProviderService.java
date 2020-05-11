@@ -57,4 +57,8 @@ public class ProviderService implements Crud<Provider> {
     public void delete(Provider provider) {
         providerRepository.delete(provider);
     }
+
+    public List<Provider> findByNameOrganization(String nameOrganization){
+        return providerRepository.findByNameOrganization(nameOrganization);
+    }
 }

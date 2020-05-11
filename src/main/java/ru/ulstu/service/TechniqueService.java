@@ -1,14 +1,18 @@
 package ru.ulstu.service;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Service;
 import ru.ulstu.model.OffsetablePageRequest;
 import ru.ulstu.model.PageableItems;
 import ru.ulstu.model.Technique;
+import ru.ulstu.model.TechniqueStatistic;
 import ru.ulstu.repository.TechniqueRepository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class TechniqueService implements Crud<Technique> {
 
     private final TechniqueRepository techniqueRepository;
@@ -54,5 +58,13 @@ public class TechniqueService implements Crud<Technique> {
     @Override
     public void delete(Technique technique) {
         techniqueRepository.delete(technique);
+    }
+
+    public List<Technique> findByAvailability(byte availability){
+        return techniqueRepository.findByAvailability(availability);
+    }
+
+    List<TechniqueStatistic> getTechniqueStatisticByNumberMore(int number){
+        return techniqueRepository.getTechniqueStatisticByNumberMore(number);
     }
 }

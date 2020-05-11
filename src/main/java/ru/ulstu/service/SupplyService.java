@@ -1,6 +1,7 @@
 package ru.ulstu.service;
 
 import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Service;
 import ru.ulstu.model.OffsetablePageRequest;
 import ru.ulstu.model.PageableItems;
 import ru.ulstu.model.Supply;
@@ -9,6 +10,7 @@ import ru.ulstu.repository.SupplyRepository;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class SupplyService implements Crud<Supply> {
 
     private final SupplyRepository supplyRepository;
@@ -54,5 +56,9 @@ public class SupplyService implements Crud<Supply> {
     @Override
     public void delete(Supply supply) {
         supplyRepository.delete(supply);
+    }
+
+    public List<Supply> findByNumber(int number){
+        return supplyRepository.findByNumber(number);
     }
 }
