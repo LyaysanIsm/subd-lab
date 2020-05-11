@@ -1,8 +1,10 @@
 package ru.ulstu.model;
 
+import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.Set;
 
+@Entity
 public class Technique extends BaseEntity {
 
     private String name;
@@ -55,5 +57,10 @@ public class Technique extends BaseEntity {
 
     public void setSupplies(Set<Supply> supplies) {
         this.supplies = supplies;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }

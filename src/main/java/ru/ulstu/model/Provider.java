@@ -77,4 +77,9 @@ public class Provider extends BaseEntity {
     public void setSupplies(Set<Supply> supplies) {
         this.supplies = supplies;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

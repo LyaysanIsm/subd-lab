@@ -2,25 +2,24 @@ package ru.ulstu.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 public class Supply extends BaseEntity {
 
 
     @Temporal(TemporalType.DATE)
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
     private Date date;
 
     private int number;
 
     @ManyToOne
+    @JoinColumn(name = "provider_id", nullable = true)
     private Provider provider;
 
     @ManyToOne
+    @JoinColumn(name = "technique_id", nullable = true)
     private Technique technique;
 
     public Date getDate() {
@@ -53,5 +52,10 @@ public class Supply extends BaseEntity {
 
     public void setTechnique(Technique technique) {
         this.technique = technique;
+    }
+
+    @Override
+    public String toString() {
+        return date.toString();
     }
 }

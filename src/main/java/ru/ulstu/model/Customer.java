@@ -67,4 +67,9 @@ public class Customer extends BaseEntity {
     public void setRequests(Set<Request> requests) {
         this.requests = requests;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

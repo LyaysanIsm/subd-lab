@@ -11,6 +11,6 @@ import java.util.List;
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     List<Customer> findByAddress(String address);
 
-    @Query("SELECT new ru.ulstu.model.CustomerStatistic(u.name) FROM Customer c WHERE c.surname LIKE %:firstLetter%")
+    @Query("SELECT new ru.ulstu.model.CustomerStatistic(c.name) FROM Customer c WHERE c.surname LIKE %:firstLetter%")
     List<CustomerStatistic> getCustomerStatisticStartName(@Param("firstLetter") String firstLetter);
 }
