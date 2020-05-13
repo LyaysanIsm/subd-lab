@@ -24,25 +24,25 @@ public class ExampleJpaApplication {
 
     @EventListener(ApplicationReadyEvent.class)
     public void onStart() {
-        Customer customer1 = crudService.createCustomer("surname", "name", "patro", "123", "ulsk");
-        Customer customer2 = crudService.createCustomer("surname3", "name", "patro2", "123", "ulsk");
-        Customer customer3 = crudService.createCustomer("surname4", "name", "patro2", "123", "ulsk");
+        Customer customer1 = crudService.createCustomer("Mahmutova", "Albina", "Ramilevna", "89267157466", "Surova3");
+        Customer customer2 = crudService.createCustomer("Efimova", "Marina", "Aleksandrovna", "80267153486", "Livanova5");
+        Customer customer3 = crudService.createCustomer("Novikov", "Dmitriy", "Pavlovich", "85267157434", "Tupoleva7");
 
-        Provider provider = crudService.createProvider("Google", "Stieve", "Jobs", "dasd", "421", "ulsk");
-        Provider provider2 = crudService.createProvider("Apple", "Stieve", "Jobs", "dasd", "421", "ulsk");
-        Provider provider3 = crudService.createProvider("ULSTU", "Stieve", "Jobs", "dasd", "421", "ulsk");
+        Provider provider = crudService.createProvider("Progress", "Matveeva", "Ksenia", "Alekseevna", "89267157466", "Goncharova5");
+        Provider provider2 = crudService.createProvider("Wall", "Petrov", "Vlad", "Matveevich", "89267157466", "Tuleneva3");
+        Provider provider3 = crudService.createProvider("Avrora", "Lagin", "Mihail", "Petrovich", "89267157466", "Sozidateley8");
 
-        Request request = crudService.createRequest(new Date(21344214), 52);
-        Request request2 = crudService.createRequest(new Date(555555), 1);
-        Request request3 = crudService.createRequest(new Date(214), 12);
+        Request request = crudService.createRequest(new Date(2019-07-01), 25);
+        Request request2 = crudService.createRequest(new Date(2019-05-10), 10);
+        Request request3 = crudService.createRequest(new Date(2019-03-11), 8);
 
-        Supply supply = crudService.createSupply(new Date(21344214), 1);
-        Supply supply2 = crudService.createSupply(new Date(123), 222);
-        Supply supply3 = crudService.createSupply(new Date(45442), 12);
+        Supply supply = crudService.createSupply(new Date(2019-07-10), 25);
+        Supply supply2 = crudService.createSupply(new Date(2019-05-15), 10);
+        Supply supply3 = crudService.createSupply(new Date(2019-03-19), 8);
 
-        Technique technique = crudService.createTechnique("comp", 12, (byte)1);
-        Technique technique2 = crudService.createTechnique("comp2", 1, (byte)1);
-        Technique technique3 = crudService.createTechnique("comp3", 24, (byte)2);
+        Technique technique = crudService.createTechnique("Computer", 50, (byte)1);
+        Technique technique2 = crudService.createTechnique("Printer", 20, (byte)1);
+        Technique technique3 = crudService.createTechnique("Monitor", 30, (byte)1);
 
 
         crudService.showAllCustomers();

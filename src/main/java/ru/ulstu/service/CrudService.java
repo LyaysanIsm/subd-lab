@@ -159,7 +159,7 @@ public class CrudService {
 
         List<Customer> customers = customerService.findByAddress("ulsk");
         log.info(customers.toString());
-        List<Provider> providers = providerService.findByNameOrganization("Google");
+        List<Provider> providers = providerService.findByNameOrganization("Avrora");
         log.info(providers.toString());
         List<Request> requests = requestService.findByDateBetween(new Date(1221333), new Date(1242141242));
         log.info(requests.toString());
