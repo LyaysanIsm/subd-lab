@@ -59,7 +59,7 @@ public class RequestService implements Crud<Request> {
         requestRepository.delete(request);
     }
 
-    public List<Request> findByDateBetween(Date dateFrom, Date dateTo){
-        return requestRepository.findByDateBetween(dateFrom, dateTo);
+    public List<Request> findByNumber(int number){
+        return requestRepository.findByNumber(number);
     }
 }

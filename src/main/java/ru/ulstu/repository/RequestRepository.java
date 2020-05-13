@@ -7,5 +7,5 @@ import java.util.Date;
 import java.util.List;
 
 public interface RequestRepository extends JpaRepository<Request, Integer> {
-    List<Request> findByDateBetween(Date dateFrom, Date dateTo);
+    List<Request> findByNumber(int number);
 }

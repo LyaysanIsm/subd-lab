@@ -157,13 +157,13 @@ public class CrudService {
     public void showFilteredRecords() {
         log.info("Filtered records:\n");
 
-        List<Customer> customers = customerService.findByAddress("ulsk");
+        List<Customer> customers = customerService.findByAddress("Surova3");
         log.info(customers.toString());
         List<Provider> providers = providerService.findByNameOrganization("Avrora");
         log.info(providers.toString());
-        List<Request> requests = requestService.findByDateBetween(new Date(1221333), new Date(1242141242));
+        List<Request> requests = requestService.findByNumber(8);
         log.info(requests.toString());
-        List<Supply> supplies = supplyService.findByNumber(1);
+        List<Supply> supplies = supplyService.findByNumber(25);
         log.info(supplies.toString());
         List<Technique> techniques = techniqueService.findByAvailability((byte)1);
         log.info(techniques.toString());
@@ -171,7 +171,7 @@ public class CrudService {
 
     public void showStatistic() {
         log.info("Technique statistic:\n");
-        List<TechniqueStatistic> techniqueStatistics = techniqueService.getTechniqueStatisticByNumberMore(5);
+        List<TechniqueStatistic> techniqueStatistics = techniqueService.getTechniqueStatisticByNumberMore(21);
         log.info(techniqueStatistics.toString());
 
         log.info("Customer statistic:\n");

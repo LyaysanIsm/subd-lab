@@ -56,6 +56,6 @@ public class Supply extends BaseEntity {
 
     @Override
     public String toString() {
-        return date.toString();
+        return Integer.toString(number);
     }
 }
