@@ -1,12 +1,11 @@
 package ru.ulstu.service;
 
 import org.springframework.data.domain.Page;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import ru.ulstu.model.Customer;
-import ru.ulstu.model.CustomerStatistic;
 import ru.ulstu.model.OffsetablePageRequest;
 import ru.ulstu.model.PageableItems;
+import ru.ulstu.model.Report;
 import ru.ulstu.repository.CustomerRepository;
 
 import java.util.List;
@@ -64,7 +63,10 @@ public class CustomerService implements Crud<Customer> {
         return customerRepository.findByAddress(address);
     }
 
-    List<CustomerStatistic> getCustomerStatisticStartName(String firstLetter){
+    List<Customer> getCustomerStatisticStartName(String firstLetter){
         return customerRepository.getCustomerStatisticStartName(firstLetter);
+    }
+    public List<Report> getreports(){
+        return customerRepository.getReports();
     }
 }

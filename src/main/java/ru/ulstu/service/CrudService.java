@@ -171,11 +171,19 @@ public class CrudService {
 
     public void showStatistic() {
         log.info("Technique statistic:\n");
-        List<TechniqueStatistic> techniqueStatistics = techniqueService.getTechniqueStatisticByNumberMore(21);
+        List<Technique> techniqueStatistics = techniqueService.getTechniqueStatisticByNumberMore(21);
         log.info(techniqueStatistics.toString());
 
         log.info("Customer statistic:\n");
-        List<CustomerStatistic> customerStatistics = customerService.getCustomerStatisticStartName("A");
+        List<Customer> customerStatistics = customerService.getCustomerStatisticStartName("A");
         log.info(customerStatistics.toString());
+
+        log.info("Technique order statistic:\n");
+        List<Technique> techniqueOrder = techniqueService.getTechniqueOrder();
+        log.info(techniqueOrder.toString());
+
+        log.info("Report statistic:\n");
+        List<Report> report = customerService.getreports();
+        log.info(report.toString());
     }
 }

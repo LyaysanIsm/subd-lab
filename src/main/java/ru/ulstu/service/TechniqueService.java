@@ -1,12 +1,11 @@
 package ru.ulstu.service;
 
 import org.springframework.data.domain.Page;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import ru.ulstu.model.OffsetablePageRequest;
 import ru.ulstu.model.PageableItems;
+import ru.ulstu.model.Report;
 import ru.ulstu.model.Technique;
-import ru.ulstu.model.TechniqueStatistic;
 import ru.ulstu.repository.TechniqueRepository;
 
 import java.util.List;
@@ -64,7 +63,10 @@ public class TechniqueService implements Crud<Technique> {
         return techniqueRepository.findByAvailability(availability);
     }
 
-    List<TechniqueStatistic> getTechniqueStatisticByNumberMore(int number){
+   public List<Technique> getTechniqueStatisticByNumberMore(int number){
         return techniqueRepository.getTechniqueStatisticByNumberMore(number);
+    }
+   public List<Technique> getTechniqueOrder(){
+       return techniqueRepository.getTechniqueOrder();
     }
 }
