@@ -1,10 +1,13 @@
 package ru.ulstu.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.Set;
 
 @Entity
+@Table(indexes = {@Index(columnList = "name")})
 public class Customer extends BaseEntity {
 
     private String surname;

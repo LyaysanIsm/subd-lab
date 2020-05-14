@@ -1,10 +1,13 @@
 package ru.ulstu.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.Set;
 
 @Entity
+@Table(indexes = {@Index(columnList = "number")})
 public class Technique extends BaseEntity {
 
     private String name;
