@@ -44,6 +44,46 @@ public class ExampleJpaApplication {
         Technique technique2 = crudService.createTechnique("Printer", 20, (byte)1);
         Technique technique3 = crudService.createTechnique("Monitor", 30, (byte)1);
 
+        Set<Request> requestsTechnique = new HashSet<Request>();
+        requestsTechnique.add(request);
+        requestsTechnique.add(request2);
+        requestsTechnique.add(request3);
+
+        technique.setRequests(requestsTechnique);
+        technique2.setRequests(requestsTechnique);
+        technique3.setRequests(requestsTechnique);
+
+        request.setTechnique(technique);
+        request2.setTechnique(technique2);
+        request3.setTechnique(technique3);
+
+        crudService.updateTechnique(technique);
+        crudService.updateTechnique(technique2);
+        crudService.updateTechnique(technique3);
+
+        Set<Request> requests1 = new HashSet<Request>();
+        Set<Request> requests2 = new HashSet<Request>();
+        Set<Request> requests3 = new HashSet<Request>();
+
+        requests1.add(request);
+        customer1.setRequests(requests1);
+        request.setCustomer(customer1);
+
+        requests2.add(request);
+        customer2.setRequests(requests2);
+        request2.setCustomer(customer2);
+
+        requests3.add(request);
+        customer3.setRequests(requests3);
+        request3.setCustomer(customer3);
+
+        crudService.updateCustomer(customer1);
+        crudService.updateCustomer(customer2);
+        crudService.updateCustomer(customer3);
+
+        crudService.updateRequest(request);
+        crudService.updateRequest(request2);
+        crudService.updateRequest(request3);
 
         crudService.showAllCustomers();
         crudService.showAllProviders();

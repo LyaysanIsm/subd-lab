@@ -183,7 +183,7 @@ public class CrudService {
         log.info(techniqueOrder.toString());
 
         log.info("Report statistic:\n");
-        List<Report> report = customerService.getreports();
+        List<Report> report = customerService.getReports();
         log.info(report.toString());
     }
 }

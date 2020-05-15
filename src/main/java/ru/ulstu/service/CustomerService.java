@@ -66,7 +66,7 @@ public class CustomerService implements Crud<Customer> {
     List<Customer> getCustomerStatisticStartName(String firstLetter){
         return customerRepository.getCustomerStatisticStartName(firstLetter);
     }
-    public List<Report> getreports(){
+    public List<Report> getReports(){
         return customerRepository.getReports();
     }
 }

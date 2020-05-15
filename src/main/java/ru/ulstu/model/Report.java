@@ -16,6 +16,6 @@ public class Report {
     }
     @Override
     public String toString() {
-        return Integer.toString(number);
+        return customername + " " + techniquename + " " + date + " " + Integer.toString(number);
     }
 }
